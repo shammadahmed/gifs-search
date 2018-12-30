@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cat GIFs</title>
+</head>
+<body>
+	<img src="#">
+	<script>
+		const img = document.querySelector('img');
+
+		fetch('http://api.giphy.com/v1/gifs/translate?api_key=xQdvSFpcoTRCuBWvpiHlUzsNRPPfsjGC&s=cats', {mode: 'cors'})
+			.then(response => response.json())
+			.then(response => img.src = response.data.images.original.url);
+	</script>
+</body>
+</html>
